@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--159357D1-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D1 Games | Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lockScreen-wrapper">
+        <div class="header">
+            <img src="https://i.postimg.cc/Pxdx8sYz/D1-Games-Logo.png" class="header-logo" alt="D1 Games Logo">
+        </div>
+        <div id="passcode-form"> 
+            <input type="text" id="username" placeholder="Enter Your Name" required>
+            <input type="password" id="passcode" placeholder="Enter Password" required>
+            <button id="submit-btn" type="submit" onclick="checkPasscode()">Confirm</button> 
+        </div> 
+        <div id="content" style="display: none;"> 
+            <button id="continue-btn" onclick="window.location.href='unlocked/home.html'">Continue</button>
+        </div> 
+    </div>
+    <script src="lockScreen.js"></script>
+</body>
+</html>

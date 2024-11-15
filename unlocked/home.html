@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D1 Games | Home</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo-name">
+                <img title="D1 Games Navbar Logo" class="navbar-logo" src="https://i.postimg.cc/Pxdx8sYz/D1-Games-Logo.png">
+                <h1 class="navbar-title1">D1 </h1>
+                <h1 class="navbar-title2">Games</h1>
+            </div>
+            <div class="navlinks">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li data-form="request">Request Games</li>
+                    <li class="unavail-nav" id="incognito-link">Incognito</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="home-wrapper">
+        <div class="home-view">
+            <img src="https://i.postimg.cc/Pxdx8sYz/D1-Games-Logo.png" class="home-logo" alt="D1 Games Logo">
+        </div>
+    </div>
+    <div class="game-view-wrapper">
+        <div class="games-view">
+            <a href="/games/super-star-car.html">
+                <div class="game-container">
+                    <img class="game-img" src="https://htmlxm.github.io/h3/super-star-car/8376e3a632b640cd3e9ca53b9963000a.jpeg" alt="Super Star Car">
+                    <h2 class="game-title">Super Star Car</h2>
+                </div>
+            </a>
+            <a href="/games/2minutefootball.html">
+                <div class="game-container">
+                    <img class="game-img" src="https://2minutefootball.github.io/file/418572a6bbddb5359501b93153290fba.png" alt="2 Minute Football">
+                    <h2 class="game-title">2 Minute Football</h2>
+                </div>
+            </a>
+            <a href="/games/shell-shockers.html">
+                <div class="game-container">
+                    <img class="game-img" src="https://cdn.discordapp.com/attachments/1305642341771509882/1306748870965067809/SPOILER_stunt-cars-2.jpg?ex=6737cc39&is=67367ab9&hm=e019b2d198842fa5320d886718887d4ae95cf6e3c0bafb818c19e51c8a1c12a7&" alt="Madalin Stunt Cars 2">
+                    <h2 class="game-title">Madalin Stunt Cars 2</h2>
+                </div>
+            </a>
+            <a href="/games/block-blast.html">
+                <div class="game-container">
+                    <img class="game-img" src="https://play-lh.googleusercontent.com/R0qgNDYYHbRhw6JFsdEbDMqONplEvJx0m0W9wzYVvY3eNF1c2rfBWYjQxW0sLEzFe1E" alt="Block Blast">
+                    <h2 class="game-title">Block Blast!</h2>
+                </div>
+            </a>
+            <!-- more game containers here -->
+        </div>
+    </div>
+    <div class="request-form-container" id="requestForm">
+        <div class="request-form">
+            <button class="close-btn" onclick="closeForm()">
+                <p class="close-btn-x">X</p>
+            </button>
+            <h2>Request a Game</h2>
+            <form id="gameRequestForm">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="gameName">Game Name</label>
+                <input type="text" id="gameName" name="gameName" required>
+                
+                <label for="playableOnline">Is this game playable online?</label>
+                <select id="playableOnline" name="playableOnline" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const requestLink = document.querySelector('.navlinks li[data-form="request"]');
+
+            if (requestLink) {
+                requestLink.addEventListener('click', function() {
+                    document.getElementById('requestForm').style.bottom = '0';
+                });
+            } else {
+                console.error("Request link not found");
+            }
+
+            document.getElementById('gameRequestForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                var name = document.getElementById('name').value;
+                var gameName = document.getElementById('gameName').value;
+                var playableOnline = document.getElementById('playableOnline').value;
+
+                var data = {
+                    content: "<@1269088910768734334>",
+                    embeds: [{
+                        description: `**New Game Request!**\n\n\`Name:\` ${name}\n\`Game Name:\` ${gameName}\n\`Playable Online:\` ${playableOnline}`,
+                        thumbnail: {
+                            url: "https://cdn.discordapp.com/attachments/1273433617212772394/1304618946628030504/D1GamesLogo.png?ex=6732af93&is=67315e13&hm=ba7f609cd494d50e0fcf98402dc08602e781b9ea851f0078dfb3d00550bd74b4&"
+                        }
+                    }]
+                };
+
+                fetch('https://discord.com/api/webhooks/1305509067065921536/jLwQaeFJLu6ZHfL2gl-vBue9SqTRqVimG7FE1h6_QvWuTLWLCRJhwSsA5cBkRpUjJ0Es', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                }).then(() => {
+                    alert('Request sent!');
+                    closeForm();
+                }).catch((error) => {
+                    alert('Error sending request!');
+                    console.error('Error:', error);
+                });
+            });
+
+            function closeForm() {
+                document.getElementById('requestForm').style.bottom = '-100%';
+            }
+
+            window.closeForm = closeForm;
+        });
+    </script>
+</body>
+</html>

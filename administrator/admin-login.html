@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D1 Games | Login</title>
+    <link rel="stylesheet" href="admin-login.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="/administrator/hashing.js"></script>
+    <script src="/administrator/security-utils.js"></script>
+    <script src="/administrator/admin-login.js"></script>
+    <script src="/administrator/session-auth.js"></script>
+  </head>
+  <body>
+    <div class="returnHome-wrapper">
+      <a href="/unlocked/home.html">
+        <p class="returnHome-text">Return Home</p>
+      </a>
+    </div>
+    <div class="lockScreen-wrapper">
+      <div class="header">
+        <img
+          src="https://i.postimg.cc/Pxdx8sYz/D1-Games-Logo.png"
+          class="header-logo"
+          alt="D1 Games Logo"
+        />
+      </div>
+      <form id="passcode-form">
+        <input
+          type="text"
+          id="username"
+          placeholder="Username"
+          required
+        />
+        <input
+          type="password"
+          id="passcode"
+          placeholder="Password"
+          required
+        />
+        <div id="error-message" class="error-message">
+            Incorrect username or Password.
+        </div>
+        <button id="submit-btn" type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

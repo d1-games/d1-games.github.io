@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D1 Games | Admin Panel</title>
+    <link rel="stylesheet" href="admin-panel.css">
+    <link rel="stylesheet" href="/universal.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="/administrator/session-auth.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo-name">
+                <img title="D1 Games Navbar Logo" class="navbar-logo" src="https://i.postimg.cc/Pxdx8sYz/D1-Games-Logo.png">
+                <h1 class="navbar-title1">D1 </h1>
+                <h1 class="navbar-title2">Admins</h1>
+            </div>
+            <div class="navlinks">
+                <ul>
+                    <li><a href="/unlocked/home.html">Home</a></li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">Admin Settings</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            <h2>Admin Controls</h2>
+            <ul>
+                <li><a href="#">Manage Users</a></li>
+                <li><a href="#">Game Access</a></li>
+                <li><a href="#">Security Logs</a></li>
+                <li><a href="#">Reports</a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard">
+            <h1>Welcome, Admin</h1>
+            <div class="analytics">
+                <div class="card sessions">
+                    <h3>Currently Online</h3>
+                    <p id="onlineSessions">Loading...</p>
+                </div>
+                <div class="card visits">
+                    <h3>Total Site Visits</h3>
+                    <p id="totalVisits">Loading...</p>
+                </div>
+                <div class="card requests">
+                    <h3>Pending Requests</h3>
+                    <p>12 Waiting</p>
+                </div>
+                <div class="card games">
+                    <h3>Games Hosted</h3>
+                    <p id="gameCount">Loading...</p>
+                </div>
+            </div>
+            <script src="/administrator/visit-tracker.js"></script>
+            <script src="/administrator/game-tracker.js"></script>
+        </main>
+    </div>
+    <div class="footer-wrapper">
+        <div class="footer-view">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h1 class="footer-title">
+                        <span class="d1">D1 </span><span class="games">Games</span>
+                    </h1>
+                    <p class="footer-subtitle">Admin Panel 2025, <span class="d1">D1 </span><span class="games">Games</span></p>
+                </div>
+                <div class="footer-right">
+                    <ul class="footer-links">
+                        <li><a href="/unlocked/home.html">Home</a></li>
+                        <li><a href="#">Anti-Block Policy</a></li>
+                        <li><a href="#">Liability Waiver</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
